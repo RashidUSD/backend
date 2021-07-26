@@ -1,0 +1,30 @@
+# Types
+type Municipalities {
+    m_id: ID
+    d_id: ID
+    m_name: String
+    m_state: String
+    departments: Departments
+}
+
+# Inputs
+input IMunicipalities {
+    m_id: ID
+    d_id: ID
+    m_name: String
+    m_state: String
+}
+
+# Queries
+type Query {
+    "Consulta todos los Municipalities"
+    getMunicipalities: [Municipalities]
+    # "Consulta un Pqr"
+    # getOnePqr(hpqrId: ID, thpId: ID): Countries 
+}
+
+# Mutations
+type Mutation {
+    "Registra un IMunicipalities"
+    createMunicipalities(input: IMunicipalities): Municipalities
+}

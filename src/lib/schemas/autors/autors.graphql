@@ -1,0 +1,23 @@
+# Types
+type Authors {
+    autId: ID!
+    name: String!
+}
+
+# Inputs
+input IAuthors {
+    autId: ID
+    name: String
+}
+
+# Queries
+type Query {
+    "Consulta todas los autores"
+    authors: [Authors]
+}
+
+# Mutations
+type Mutation {
+    "Registra un autor"
+    createAutor(input: IAuthors!): Authors
+}

@@ -1,0 +1,54 @@
+# Types
+type Product {
+    pro_id: ID!
+    pro_name: String!
+    pro_description: String!
+    pro_image: String!
+    pro_price: Int!
+    pro_width: Int!
+    pro_height: Int!
+    pro_length: Int!
+    pro_weight: Int!
+    pro_quantity: Int!
+    pro_available: Int!
+    pro_outstanding: Int!
+    pro_delivery: Int!
+    pro_state: Int!
+    pro_datCre: Int!
+}
+
+# Inputs
+input IProduct {
+    pro_id: ID!
+    pro_name: String!
+    pro_description: String!
+    pro_image: String!
+    pro_price: Int!
+    pro_width: Int!
+    pro_height: Int!
+    pro_length: Int!
+    pro_weight: Int!
+    pro_quantity: Int!
+    pro_available: Int!
+    pro_outstanding: Int!
+    pro_delivery: Int!
+    pro_state: Int!
+    pro_datCre: Int!
+}
+
+# Queries
+type Query {
+    "Consulta todas los lectores"
+    product: [Product]
+}
+# Subir imagen del producto
+type UpdateAvatar {
+  status: Boolean,
+  urlProduct: String
+}
+
+# Mutations
+type Mutation {
+    "Registra un lector"
+    createProduct(input: IProduct!): Product
+}

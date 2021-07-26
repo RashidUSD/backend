@@ -1,0 +1,15 @@
+input IUserRecoverAccount {
+  token: String 
+}
+type Token {
+  token: String
+}
+# Queries
+type Query {
+    UserRecoverAccount(input: String ): String
+}
+# Mutations
+type Mutation {
+    "Ayuda a la recuperación de cuenta"
+    UserRecoverAccount(input: IUserRecoverAccount!): Token
+}

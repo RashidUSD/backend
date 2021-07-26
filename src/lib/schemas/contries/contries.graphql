@@ -1,0 +1,31 @@
+# Types
+type Countries {
+    c_id: ID
+    c_name: String
+    c_calCod: String
+    c_state: String
+}
+
+# Inputs
+input ICountries {
+    c_id: ID
+    c_name: String
+    c_calCod: String
+    c_state: String
+}
+
+# Queries
+type Query {
+    "Consulta todos los Countries"
+    countries: [Countries]
+    "Consulta un País"
+    # getOneCountry(Search: String): Countries 
+    getOneCountry(c_id: ID, c_name: String, c_calCod: String, c_state: String): Countries 
+    # getOnePqr(hpqrId: ID, thpId: ID): Countries 
+}
+
+# Mutations
+type Mutation {
+    "Registra un PQR"
+    createCountries(input: ICountries): Countries
+}

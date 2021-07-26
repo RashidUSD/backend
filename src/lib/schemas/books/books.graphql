@@ -1,0 +1,30 @@
+# Types
+type Books {
+    bId: ID!
+    autId: ID!
+    title: String!
+    description: String
+    topicBook: String
+    autor: Authors
+}
+
+# Inputs
+input ICourses {
+    bId: ID
+    autId: ID!
+    title: ID
+    description: String
+    topicBook: String
+}
+
+# Queries
+type Query {
+    "Consulta todas los libro"
+    books: [Books]
+}
+
+# Mutations
+type Mutation {
+    "Registra un libro"
+    createBooks(input: ICourses!): Books
+}

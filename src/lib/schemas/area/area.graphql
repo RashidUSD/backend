@@ -1,0 +1,29 @@
+# Types
+type Area {
+    aId: ID!
+    cId: ID
+    aName: String
+    aState: Int
+    aDatCre: DateTime
+    aDatMod: DateTime
+}
+
+# Inputs
+input IArea {
+    aId: ID
+    cId: ID
+    aName: String
+    aState: Int
+}
+
+# Queries
+type Query {
+    "Consulta todas las áreas"
+    areas: [Area]
+}
+
+# Mutations
+type Mutation {
+    "Registra un area"
+    createArea(input: IArea!): Area
+}

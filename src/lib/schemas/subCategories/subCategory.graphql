@@ -1,0 +1,36 @@
+# Types
+type SubCategory {
+    subcatpId: ID!
+    catpro_id: String!
+    subcatPhoto: String!
+    subcatState: String!
+    subcatdatCre: String
+    subcatdatMod: String
+}
+
+# Inputs
+input ISubCategory {
+    subcatpId: ID!
+    catpro_id: String!
+    subcatPhoto: String!
+    subcatState: String!
+    subcatdatCre: String
+    subcatdatMod: String
+}
+
+# Queries
+type Query {
+    "Consulta todas los createSubCategory"
+    subCategorieproduct: [SubCategory]
+}
+# Subir imagen del producto
+type UpdateAvatar {
+  status: Boolean,
+  urlCategory: String
+}
+
+# Mutations
+type Mutation {
+    "Registra un createSubCategory"
+    createSubCategory(input: ISubCategory!): SubCategory
+}

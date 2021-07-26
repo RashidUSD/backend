@@ -1,0 +1,31 @@
+# Types
+type Departments {
+    d_id: ID
+    c_id: ID
+    d_name: String
+    d_state: String
+    c_name: String
+    countries: Countries
+}
+
+# Inputs
+input IDepartments {
+    d_id: ID
+    c_id: ID
+    d_name: String
+    d_state: String
+}
+
+# Queries
+type Query {
+    "Consulta todos los Countries"
+    departments: [Departments]
+    # "Consulta un Pqr"
+    # getOnePqr(hpqrId: ID, thpId: ID): Countries 
+}
+
+# Mutations
+type Mutation {
+    "Registra un PQR"
+    createDepartments(input: IDepartments): Departments
+}

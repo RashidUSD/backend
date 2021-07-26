@@ -1,0 +1,31 @@
+# Types
+type Lectors {
+    lId: ID!
+    bId: ID!
+    name: String!
+    lastName: String!
+    typeBooks: String
+    books: Books
+}
+
+# Inputs
+input ILectors {
+    lId: ID
+    bId: ID!
+    name: ID
+    lastName: String!
+    typeBooks: String!
+
+}
+
+# Queries
+type Query {
+    "Consulta todas los lectores"
+    lectors: [Lectors]
+}
+
+# Mutations
+type Mutation {
+    "Registra un lector"
+    createLectors(input: ILectors!): Lectors
+}

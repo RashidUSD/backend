@@ -1,0 +1,32 @@
+# Types
+type Category {
+    catpro_id: ID!
+    ctgpro_name: String!
+    ctgpro_datCre: String!
+    ctgpro_datMod: String!
+}
+
+# Inputs
+input ICategory {
+    catpro_id: ID!
+    ctgpro_name: String!
+    ctgpro_datCre: String!
+    ctgpro_datMod: String!
+}
+
+# Queries
+type Query {
+    "Consulta todas los lectores"
+    categorieproduct: [Category]
+}
+# Subir imagen del producto
+type UpdateAvatar {
+  status: Boolean,
+  urlCategory: String
+}
+
+# Mutations
+type Mutation {
+    "Registra un lector"
+    createCategory(input: ICategory!): Category
+}

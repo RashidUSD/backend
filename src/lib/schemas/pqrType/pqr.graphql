@@ -1,0 +1,29 @@
+# Types
+type TypePQR {
+    thpId: ID!
+    thpName: String!
+    thpIcon: String!
+    thpState: String
+    thpDatCre: String
+    thpDatMod: String
+}
+
+# Inputs
+input ITypePQR {
+    thpId: ID!
+    thpName: String!
+    thpIcon: String!
+    thpState: String
+}
+
+# Queries
+type Query {
+    "Consulta todos los tipos de PQR"
+    typepqr: [TypePQR]
+}
+
+# Mutations
+type Mutation {
+    "Registra un TIPO DE PQR"
+    createtypepqr(input: ITypePQR!): TypePQR
+}

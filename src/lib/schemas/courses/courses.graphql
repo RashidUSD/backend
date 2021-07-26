@@ -1,0 +1,27 @@
+# Types
+type Courses {
+    cId: ID
+    title: String
+    description: String
+    topic: String
+}
+
+# Inputs
+input ICourses {
+    cId: ID
+    title: ID
+    description: String
+    topic: String
+}
+
+# Queries
+type Query {
+    "Consulta todas los cursos"
+    courses: [Courses]
+}
+
+# Mutations
+type Mutation {
+    "Registra un curso"
+    createCourses(input: ICourses): Courses
+}
